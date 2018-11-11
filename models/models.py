@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api
 
-# class my_module(models.Model):
-#     _name = 'my_module.my_module'
+# class gestion_formation(models.Model):
+#     _name = 'gestion_formation.gestion_formation'
 
 #     name = fields.Char()
 #     value = fields.Integer()

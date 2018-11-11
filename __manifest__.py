@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "my_module",
+    'name': "gestion_formation",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,7 +10,7 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "Aymen Bennour, Malti Mohammed",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
