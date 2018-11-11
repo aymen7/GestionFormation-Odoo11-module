@@ -1,7 +1,7 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
+     explicit list view definition 
+
     <record model="ir.ui.view" id="gestion_formation.list">
       <field name="name">gestion_formation list</field>
       <field name="model">gestion_formation.gestion_formation</field>
@@ -13,19 +13,19 @@
         </tree>
       </field>
     </record>
-    -->
+    
 
-    <!-- actions opening views on models -->
-    <!--
+     actions opening views on models 
+    
     <record model="ir.actions.act_window" id="gestion_formation.action_window">
       <field name="name">gestion_formation window</field>
       <field name="res_model">gestion_formation.gestion_formation</field>
       <field name="view_mode">tree,form</field>
     </record>
-    -->
+    
 
-    <!-- server action to the one above -->
-    <!--
+     server action to the one above 
+    
     <record model="ir.actions.server" id="gestion_formation.action_server">
       <field name="name">gestion_formation server</field>
       <field name="model_id" ref="model_gestion_formation_gestion_formation"/>
@@ -38,23 +38,23 @@
         }
       </field>
     </record>
-    -->
+    
 
-    <!-- Top menu item -->
-    <!--
+     Top menu item 
+    
     <menuitem name="gestion_formation" id="gestion_formation.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
+    
+     menu categories 
+    
     <menuitem name="Menu 1" id="gestion_formation.menu_1" parent="gestion_formation.menu_root"/>
     <menuitem name="Menu 2" id="gestion_formation.menu_2" parent="gestion_formation.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
+    
+     actions 
+    
     <menuitem name="List" id="gestion_formation.menu_1_list" parent="gestion_formation.menu_1"
               action="gestion_formation.action_window"/>
     <menuitem name="Server to list" id="gestion_formation" parent="gestion_formation.menu_2"
               action="gestion_formation.action_server"/>
-    -->
+    
   </data>
 </odoo>
