@@ -1,10 +1,50 @@
 <odoo>
   <data>
-     explicit list view definition 
+
+
+    <!-- #############################formation ############################### -->
+
+    <!-- view_formation_form-->
+    <record id="view_formation_form" model="ir.ui.view">
+            <field name="name">formation.formation.form</field>
+            <field name="model">formation.formation</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="formation">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <table>
+                                    <tr>
+                                        <td style="padding-right:10px;"><field name="name" required="1" placeholder="le nom" /></td>
+                                        <td style="padding-right:10px;"><field name="prix" placeholder="le prix" /></td>
+                                    </tr>
+                                </table>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+    <!-- end view_formation_form-->
+    
+    <!-- view_formation_tree-->
+    <record id="view_formation_tree" model="ir.ui.view">
+            <field name="name">formation.formation.tree</field>
+            <field name="model">formation.formation</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="formations">
+                    <field name="name" />
+                    <field name="prix" />
+                </tree>
+            </field>
+    </record>
+    <!-- end of view_formation_tree-->    
 
     <!-- action_view_formation_list-->
     <record model="ir.actions.act_window" id="action_view_formation_list">
-        <field name="name">formation list</field> 
+        <field name="name">liste des formations</field> 
         <field name="res_model">formation.formation</field> 
         <field name="view_type">form</field> 
         <field name="view_mode">tree,form</field> 
@@ -15,11 +55,78 @@
     </record>
     <!-- end of action_view_formation_list-->
 
-    <!-- menu items-->
-    <menuitem id="menu_gestion_formation" name="gestion formation"/>
-        <menuitem id="menu_formation" name="formation" parent="menu_gestion_formation" 
-        action="action_view_formation_list"/>
+    <!-- ############################# end formation ############################### -->
 
+
+
+
+    <!-- ############################# formateur ############################### -->
+    
+    <!-- view_formateur_form-->
+    <record id="view_formateur_form" model="ir.ui.view">
+            <field name="name">formateur.formateur.form</field>
+            <field name="model">formateur.formateur</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="formateur">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <table>
+                                    <tr>
+                                        <td style="padding-right:10px;"><field name="matricule" required="1" placeholder="entrer matricule" /></td>
+                                        <td style="padding-right:10px;"><field name="name" placeholder="le nom" /></td>
+                                        <td style="padding-right:10px;"><field name="diplome" placeholder="le diplome" /></td>
+                                    </tr>
+                                </table>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+    <!-- end view_formateur_form-->
+    
+    <!-- view_formateur_tree-->
+    <record id="view_formateur_tree" model="ir.ui.view">
+            <field name="name">formateur.formateur.tree</field>
+            <field name="model">formateur.formateur</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="formateurs">
+                    <field name="matricule" />
+                    <field name="name" />
+                    <field name="diplome" />
+                </tree>
+            </field>
+    </record>
+    <!-- end of view_formateur_tree-->   
+
+    <!-- action_view_formateur_list-->
+    <record model="ir.actions.act_window" id="action_view_formateur_list">
+        <field name="name">liste des formateurs</field> 
+        <field name="res_model">formateur.formateur</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="domain">[]</field> 
+        <field name="help" type="html"> 
+            <p class="oe_view_nocontent_create">ajouter un nouveau formateur. </p>
+        </field>
+    </record>
+    <!-- end of action_view_formateur_list-->
+
+    <!-- ############################# end formateur ############################### -->
+
+
+
+
+    <!-- menu items-->
+    <menuitem id="header_menu" name="gestion formation"/>
+        <menuitem id="menu_gestion_formation" name="gestion formation" parent='header_menu'/>
+            <menuitem id="menu_formation" name="formation" parent="menu_gestion_formation" 
+            action="action_view_formation_list"/>
+            <menuitem id="menu_formateur" name="formateur" parent="menu_gestion_formation" 
+            action="action_view_formateur_list"/>
     <!-- end of menu items-->
 
   </data>
