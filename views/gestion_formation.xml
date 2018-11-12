@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+     explicit list view definition 
+
+    <!-- action_view_formation_list-->
+    <record model="ir.actions.act_window" id="action_view_formation_list">
+        <field name="name">formation list</field> 
+        <field name="res_model">formation.formation</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="domain">[]</field> 
+        <field name="help" type="html"> 
+            <p class="oe_view_nocontent_create">Crée une nouvelle formation. </p>
+        </field>
+    </record>
+    <!-- end of action_view_formation_list-->
+
+    <!-- menu items-->
+    <menuitem id="menu_gestion_formation" name="gestion formation"/>
+        <menuitem id="menu_formation" name="formation" parent="menu_gestion_formation" 
+        action="action_view_formation_list"/>
+
+    <!-- end of menu items-->
+
+  </data>
+</odoo>
