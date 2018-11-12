@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+     explicit list view definition 
+
+    <record model="ir.ui.view" id="view_formation_list">
+      <field name="name">formation list</field>
+      <field name="model">formation.formation</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="prix"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>
