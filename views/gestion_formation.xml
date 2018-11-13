@@ -172,6 +172,62 @@
 
     <!-- ############################# end candidat ############################### -->
 
+    <!-- ############################# salle ############################### -->
+    
+    <!-- view_salle_form-->
+    <record id="view_salle_form" model="ir.ui.view">
+            <field name="name">salle.salle.form</field>
+            <field name="model">salle.salle</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="salle">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <table>
+                                    <tr>
+                                        <td style="padding-right:10px;"><field name="name" placeholder="le nom" /></td>
+                                        <td style="padding-right:10px;"><field name="nb_place" placeholder="le nombre de place" /></td>
+                                        <td style="padding-right:10px;"><field name="libre" placeholder="esque la est libre ??" /></td>
+                                    </tr>
+                                </table>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+    <!-- end view_salle_form-->
+    
+    <!-- view_salle_tree-->
+    <record id="view_salle_tree" model="ir.ui.view">
+            <field name="name">salle.salle.tree</field>
+            <field name="model">salle.salle</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="salles">
+                    <field name="name" />
+                    <field name="nb_place" />
+                    <field name="libre" />
+                </tree>
+            </field>
+    </record>
+    <!-- end of view_salle_tree-->   
+
+    <!-- action_view_salle_list-->
+    <record model="ir.actions.act_window" id="action_view_salle_list">
+        <field name="name">liste des salles</field> 
+        <field name="res_model">salle.salle</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="domain">[]</field> 
+        <field name="help" type="html"> 
+            <p class="oe_view_nocontent_create">ajouter un nouvelle salle. </p>
+        </field>
+    </record>
+    <!-- end of action_view_salle_list-->
+
+    <!-- ############################# end salle ############################### -->
 
     <!-- menu items-->
     <menuitem id="header_menu" name="gestion formation"/>
@@ -184,6 +240,9 @@
 
             <menuitem id="menu_candidat" name="candidat" parent="menu_gestion_formation" 
             action="action_view_candidat_list"/>
+
+            <menuitem id="menu_salle" name="salle" parent="menu_gestion_formation" 
+            action="action_view_salle_list"/>            
     <!-- end of menu items-->
 
   </data>

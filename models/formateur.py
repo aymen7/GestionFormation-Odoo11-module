@@ -7,3 +7,4 @@ class Formateur(models.Model):
     name = fields.Char()
     matricule = fields.Integer()
     diplome = fields.Char()
+    
