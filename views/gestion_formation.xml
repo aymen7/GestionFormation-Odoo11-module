@@ -117,7 +117,60 @@
 
     <!-- ############################# end formateur ############################### -->
 
+    <!-- ############################# candidat ############################### -->
+    
+    <!-- view_candidat_form-->
+    <record id="view_candidat_form" model="ir.ui.view">
+            <field name="name">candidat.candidat.form</field>
+            <field name="model">candidat.candidat</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="candidat">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <table>
+                                    <tr>
+                                        <td style="padding-right:10px;"><field name="name" placeholder="le nom" /></td>
+                                        <td style="padding-right:10px;"><field name="num_ins" placeholder="le numéro d'inscription" /></td>
+                                    </tr>
+                                </table>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+    <!-- end view_candidat_form-->
+    
+    <!-- view_candidat_tree-->
+    <record id="view_candidat_tree" model="ir.ui.view">
+            <field name="name">candidat.candidat.tree</field>
+            <field name="model">candidat.candidat</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="candidats">
+                    <field name="name" />
+                    <field name="num_ins" />
+                </tree>
+            </field>
+    </record>
+    <!-- end of view_candidat_tree-->   
 
+    <!-- action_view_candidat_list-->
+    <record model="ir.actions.act_window" id="action_view_candidat_list">
+        <field name="name">liste des candidats</field> 
+        <field name="res_model">candidat.candidat</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+        <field name="domain">[]</field> 
+        <field name="help" type="html"> 
+            <p class="oe_view_nocontent_create">ajouter un nouveau candidat. </p>
+        </field>
+    </record>
+    <!-- end of action_view_candidat_list-->
+
+    <!-- ############################# end candidat ############################### -->
 
 
     <!-- menu items-->
@@ -125,8 +178,12 @@
         <menuitem id="menu_gestion_formation" name="gestion formation" parent='header_menu'/>
             <menuitem id="menu_formation" name="formation" parent="menu_gestion_formation" 
             action="action_view_formation_list"/>
+
             <menuitem id="menu_formateur" name="formateur" parent="menu_gestion_formation" 
             action="action_view_formateur_list"/>
+
+            <menuitem id="menu_candidat" name="candidat" parent="menu_gestion_formation" 
+            action="action_view_candidat_list"/>
     <!-- end of menu items-->
 
   </data>
